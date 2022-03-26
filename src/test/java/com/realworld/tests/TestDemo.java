@@ -18,5 +18,6 @@ public class TestDemo extends BaseTest {
         RegistrationPage registrationPage = homePage.goToRegistrationPage();
         registrationPage.enterUserInformationDetail(USERNAME, EMAIL, PASSWORD);
         homePage = registrationPage.clickSignIn();
+        homePage.verifyHomepageIsLoaded();
     }
 }

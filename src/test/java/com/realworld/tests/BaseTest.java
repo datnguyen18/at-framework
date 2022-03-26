@@ -3,6 +3,7 @@ package com.realworld.tests;
 import com.realworld.util.DriverSession;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 public class BaseTest {
@@ -15,6 +16,7 @@ public class BaseTest {
         System.setProperty("webdriver.chrome.logfile", "C:\\selenium\\logs\\chromedriver.log");
         this.driverSession = DriverSession.getInstance(new ChromeDriver());
         this.driver = DriverSession.getDriver();
+        this.driver.manage().window().maximize();
     }
 
     protected void navigateToPage(String url) {

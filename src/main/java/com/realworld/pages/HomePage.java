@@ -1,13 +1,10 @@
 package com.realworld.pages;
 
-import com.realworld.util.DriverSession;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 public class HomePage extends AbstractWebPage {
     private static final Logger log = LogManager.getLogger(HomePage.class);
@@ -31,5 +28,10 @@ public class HomePage extends AbstractWebPage {
     public RegistrationPage goToRegistrationPage() {
         driver.findElement(By.cssSelector("[href='#register']")).click();
         return new RegistrationPage();
+    }
+
+    public void verifyHomepageIsLoaded() {
+        log.info("Verify Home Page is loaded successfully");
+        Assert.assertTrue(driver.findElement(By.className(getClassPage())).isDisplayed());
     }
 }
