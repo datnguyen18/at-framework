@@ -18,13 +18,13 @@ public class RegistrationPage extends AbstractWebPage{
     private WebElement usernameInput;
 
     @FindBy(css = "[placeholder='Email']")
-    private WebElement emailInput;
+    protected WebElement emailInput;
 
     @FindBy(css = "[placeholder='Password']")
-    private WebElement passwordInput;
+    protected WebElement passwordInput;
 
     @FindBy(className = "btn-lg")
-    private WebElement signInButton;
+    protected WebElement signInButton;
 
     @Override
     protected Logger getLogger() {
