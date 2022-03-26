@@ -12,7 +12,17 @@ public class TestDemo extends BaseTest {
     private static final String EMAIL = "email_" + RAND_CODE + "@email.com";
     private static final String PASSWORD = "password123";
     @Test
-    public void test() {
+    public void test1() {
+        navigateToPage("https://react-redux.realworld.io/");
+        HomePage homePage = new HomePage();
+        RegistrationPage registrationPage = homePage.goToRegistrationPage();
+        registrationPage.enterUserInformationDetail(USERNAME, EMAIL, PASSWORD);
+        homePage = registrationPage.clickSignIn();
+        homePage.verifyHomepageIsLoaded();
+    }
+
+    @Test
+    public void test2() {
         navigateToPage("https://react-redux.realworld.io/");
         HomePage homePage = new HomePage();
         RegistrationPage registrationPage = homePage.goToRegistrationPage();
