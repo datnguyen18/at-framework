@@ -19,7 +19,6 @@ public abstract class AbstractWebPage {
         this.driver = DriverSession.getDriver();
         waitForPageLoaded();
         PageFactory.initElements(driver, this);
-        BasicConfigurator.configure();
     }
 
     protected abstract String getClassPage();

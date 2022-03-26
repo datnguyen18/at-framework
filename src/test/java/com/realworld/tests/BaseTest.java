@@ -1,6 +1,7 @@
 package com.realworld.tests;
 
 import com.realworld.util.DriverSession;
+import org.apache.log4j.BasicConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -11,6 +12,7 @@ public class BaseTest {
     private WebDriver driver;
     @BeforeTest
     public void setupDriver() {
+        BasicConfigurator.configure();
         System.setProperty("webdriver.chrome.driver",
                 "C:\\selenium\\drivers\\chromedriver_win32\\chromedriver.exe");
         System.setProperty("webdriver.chrome.logfile", "C:\\selenium\\logs\\chromedriver.log");
