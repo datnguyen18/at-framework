@@ -18,4 +18,12 @@ public class DriverSession {
         }
         return instance;
     }
+
+    public static DriverSession quitDriver(WebDriver driver) {
+        if(instance != null) {
+            driver.quit();
+            instance = null;
+        }
+        return null;
+    }
 }
