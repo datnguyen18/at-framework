@@ -49,10 +49,9 @@ public class RegistrationPage extends AbstractWebPage{
         passwordInput.sendKeys(password);
     }
 
-    public HomePage clickSignIn() {
+    public void clickSignIn() {
         log.info("Click [Sign in] button");
         signInButton.click();
-        return new HomePage();
     }
 
 }
