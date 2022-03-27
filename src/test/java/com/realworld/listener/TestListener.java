@@ -17,12 +17,12 @@ import java.util.Calendar;
 public class TestListener implements ITestListener {
     @Override
     public void onTestStart(ITestResult iTestResult) {
-
+        Reporter.log("Method name is: " + iTestResult.getName());
     }
 
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
-
+        Reporter.log("Method name is: " + iTestResult.getStatus());
     }
 
     @Override
@@ -38,10 +38,12 @@ public class TestListener implements ITestListener {
             File destFile = new File((String) failureScreenshotPath + methodName + "_" + formater.format(calendar.getTime()) + ".png");
             try {
                 Files.copy(scrFile.toPath(), destFile.toPath());
+                Reporter.log("<a href='"+ destFile.toPath() + "'> <img src='"+ destFile.toPath() + "' height='100' width='100'/> </a>");
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
+
     }
 
     @Override
