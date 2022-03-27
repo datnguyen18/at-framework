@@ -1,11 +1,13 @@
 package com.realworld.tests;
 
+import com.realworld.listener.TestListener;
 import com.realworld.util.DriverSession;
 import org.apache.log4j.BasicConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 
+@Listeners(TestListener.class)
 public class BaseTest {
     private DriverSession driverSessionHolder;
     private ThreadLocal<WebDriver> driver = new ThreadLocal<>();
