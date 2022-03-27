@@ -2,7 +2,7 @@
 
 - You need to set environment variable `JAVA_HOME` and enter your `JDK` or `JRE` installation path
 - Also set `M2_HOME`. The variable should be the source folder path. For example `D:\apache-maven-3.6.3`
-- You need to have Chromedriver and put it to `C:\selenium\drivers\chromedriver_win32\`
+- You need to have [Chromedriver](https://sites.google.com/chromium.org/driver/) and put it to `C:\selenium\drivers\chromedriver_win32\`
 ## List of features
 
 - Running test methods parallel
