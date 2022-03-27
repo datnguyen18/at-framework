@@ -11,6 +11,7 @@ import org.testng.annotations.*;
 public class BaseTest {
     private DriverSession driverSessionHolder;
     private ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+
     @BeforeTest
     public void setupProperty() {
         BasicConfigurator.configure();
@@ -19,7 +20,7 @@ public class BaseTest {
     @BeforeMethod
     @Parameters("browser")
     public void setupDriver(String browser) {
-        if(browser.equalsIgnoreCase("chrome")) {
+        if (browser.equalsIgnoreCase("chrome")) {
             System.setProperty("webdriver.chrome.driver",
                     "C:\\selenium\\drivers\\chromedriver_win32\\chromedriver.exe");
             System.setProperty("webdriver.chrome.logfile", "C:\\selenium\\logs\\chromedriver.log");

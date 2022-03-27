@@ -4,7 +4,6 @@ import com.realworld.pages.HomePage;
 import com.realworld.pages.LoginPage;
 import com.realworld.pages.RegistrationPage;
 import com.realworld.util.GeneralUtil;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TestDemo extends BaseTest {
@@ -34,5 +33,15 @@ public class TestDemo extends BaseTest {
         loginPage.enterEmailAndPassword(INVALID_EMAIL, PASSWORD);
         loginPage.clickSignIn();
         loginPage.verifyErrorMessageDisplay(MESSAGE);
+    }
+
+    @Test
+    public void testWillBeFailed() {
+        navigateToPage("https://react-redux.realworld.io/");
+        HomePage homePage = new HomePage();
+        LoginPage loginPage = homePage.goToLoginPage();
+        loginPage.enterEmailAndPassword(INVALID_EMAIL, PASSWORD);
+        loginPage.clickSignIn();
+        loginPage.verifyErrorMessageDisplay(MESSAGE + "ssss");
     }
 }
